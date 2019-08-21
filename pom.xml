@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.nordakademie.iaa</groupId>
+    <artifactId>hibernate-examples</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <description>Example application for the Hibernate ORM framework.</description>
+    <organization>
+        <name>Nordakademie gAG Elmshorn</name>
+        <url>http://www.nordakademie.de</url>
+    </organization>
+    <developers>
+        <developer>
+            <name>Stephan Anft</name>
+            <email>stephan.anft@nordakademie.de</email>
+        </developer>
+        <developer>
+            <name>Stefan Reichert</name>
+            <email>stefan.reichert@nordakademie.de</email>
+        </developer>
+    </developers>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.4.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.199</version>
+        </dependency>
+    </dependencies>
+
+</project>

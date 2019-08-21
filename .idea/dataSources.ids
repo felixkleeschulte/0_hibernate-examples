@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="H2 - NAK" uuid="ed7ff00b-bf9c-43f0-b108-0083962e463f">
+    <database-info product="H2" version="1.4.187 (2015-04-10)" jdbc-version="4.0" driver-name="H2 JDBC Driver" driver-version="1.4.187 (2015-04-10)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="PUBLIC" catalog="NAK"/>
+    <table name="ROOM" schema="PUBLIC" catalog="NAK" type="TABLE">
+      <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" def="KE5FWFQgVkFMVUUgRk9SIFBVQkxJQy5TWVNURU1fU0VRVUVOQ0VfN0EyQ0RBN0NfMDFCMl80QkM1X0FBQUFfMzYzOTVFNDc2REZBKQ==" autoIncrement="true"/>
+      <column name="BEAMERPRESENT" sqlType="BOOLEAN" precision="1" scale="0" nullable="true" jdbcType="16"/>
+      <column name="BUILDING" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ROOMNUMBER" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="SEATS" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="CONSTRAINT_2" columns="ID"/>
+    </table>
+  </data-source>
+</component>
