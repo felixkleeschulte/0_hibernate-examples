@@ -23,6 +23,9 @@ public class HibernateUtil {
      */
     public static EntityManagerFactory getEntityManagerFactory() {
         return ENTITY_MANAGER_FACTORY;
+
+
+
     }
 
 }
