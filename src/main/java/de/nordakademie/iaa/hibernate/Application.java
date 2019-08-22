@@ -18,17 +18,31 @@ public class Application {
             room.setBuilding("Haus A");
             room.setProjectorPresent(false);
             room.setSeats(15);
-            persistRoom(room);
+            room.setRoomNumber(1);
 
+
+            persistRoom(room);
             Room result = showRoom(room.getId());
+            updateRoom(result, result.getBuilding(), result.isProjectorPresent(), result.getSeats(), 2);
             System.out.println("Buildingname: " + result.getBuilding());
 
-        } catch (RoomAlreadyExistsException e) {
+        } catch (RoomAlreadyExistsException | RoomNotFoundException e) {
             e.printStackTrace();
         } finally {
             // Required in order to make the thread exit normally
             HibernateUtil.getEntityManagerFactory().close();
         }
+    }
+
+    public static void updateRoom(Room room, String building, boolean projectorPresent, Integer seats, Integer roomNumber) throws RoomNotFoundException {
+        EntityManager entityManager = HibernateUtil.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+
+        room.setBuilding(building);
+        room.setProjectorPresent(projectorPresent);
+        room.setSeats(seats);
+        room.setRoomNumber(roomNumber);
+        entityManager.getTransaction().commit();
     }
 
     public static void persistRoom(Room room) throws RoomAlreadyExistsException {
@@ -37,8 +51,7 @@ public class Application {
         try {
             entityManager.persist(room);
             entityManager.getTransaction().commit();
-        }
-        catch (ConstraintViolationException e) {
+        } catch (ConstraintViolationException e) {
             entityManager.getTransaction().rollback();
             throw new RoomAlreadyExistsException();
         }
